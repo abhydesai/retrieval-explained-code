@@ -1,6 +1,6 @@
-# RAG Search and Diagnosis — companion code
+# Retrieval Explained — companion code
 
-Runnable code for the **RAG Search and Diagnosis** video series. Every video that shows
+Runnable code for the **Retrieval Explained** video series. Every video that shows
 code has its code here, in the exact form the video shows it: clone the repo, install the
 folder's requirements, `cd` into the video's folder, and run the commands the video runs.
 
