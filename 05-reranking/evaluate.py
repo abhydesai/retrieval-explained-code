@@ -14,4 +14,5 @@ before = first_stage()
 after = rerank(passages)
 
 for k in [1, 4]:
-    print(f"top {k}:  before {hit_at_k(before, k)}  after {hit_at_k(after, k)}")
+    print(f"top {k}:  before {hit_at_k(before, k)}"
+          f"  after {hit_at_k(after, k)}")
