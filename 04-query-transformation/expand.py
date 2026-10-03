@@ -1,7 +1,8 @@
 """Expansion: search several alternative queries and merge the results."""
+from pathlib import Path
+
 from corpus import QUESTION, retriever
 from llm import ask
-from rewrite import rewrite
 
 
 def expand(question, n=3):
@@ -15,7 +16,7 @@ def expand(question, n=3):
     return [line.strip() for line in reply.splitlines() if line.strip()]
 
 
-rewritten = rewrite(QUESTION)
+rewritten = Path("rewrite.txt").read_text()  # the rewrite that ran
 queries = [rewritten] + expand(QUESTION)
 for q in queries:
     print("query:", q)

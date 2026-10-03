@@ -1,4 +1,6 @@
 """Rewrite the question as one search query, then search with the rewrite."""
+from pathlib import Path
+
 from corpus import QUESTION, retriever
 from llm import ask
 
@@ -15,6 +17,7 @@ def rewrite(question):
 
 if __name__ == "__main__":
     rewritten = rewrite(QUESTION)
+    Path("rewrite.txt").write_text(rewritten)  # log the input that ran
     print("rewrite:", rewritten)
     print()
     for p in retriever.search(rewritten, k=5):

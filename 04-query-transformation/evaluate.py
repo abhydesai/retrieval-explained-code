@@ -1,7 +1,7 @@
 """Count how many labeled answer passages each search input retrieves."""
+from pathlib import Path
+
 from corpus import QUESTION, retriever
-from hyde import hypothetical_answer
-from rewrite import rewrite
 
 # Passages we've labeled as actually answering the question
 relevant = {"mem-leak-01", "conn-pool-03"}
@@ -16,8 +16,8 @@ drifted = "python memory leak fixes"  # a rewrite that guessed the diagnosis
 
 for name, q in [
     ("raw question", QUESTION),
-    ("rewrite", rewrite(QUESTION)),
-    ("hyde", hypothetical_answer(QUESTION)),
+    ("rewrite", Path("rewrite.txt").read_text()),
+    ("hyde", Path("hypothetical.txt").read_text()),
     ("drifted rewrite", drifted),
 ]:
     print(f"{name:16s} hits@5 = {hits_at_k(q)} / {len(relevant)}")

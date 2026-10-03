@@ -12,6 +12,10 @@ hypothetical answer and search with that (HyDE).
 | `python hyde.py` | a generated hypothetical answer used as the search query |
 | `python evaluate.py` | how many of the two labeled answer passages each input retrieves |
 
+Run them in this order: `rewrite.py` and `hyde.py` save the query they searched with to
+`rewrite.txt` and `hypothetical.txt`, and `expand.py` and `evaluate.py` reuse those, so every
+step compares the same inputs.
+
 `corpus.py` holds the ten notes and a semantic retriever over them. The scripts other than
 `baseline.py` call a language model: copy `.env.example` to `.env` and fill in any
 OpenAI-compatible provider. Model output varies from run to run, so your rewrites and counts

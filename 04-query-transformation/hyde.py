@@ -1,4 +1,6 @@
 """HyDE: search with a generated, hypothetical answer, not the question."""
+from pathlib import Path
+
 from corpus import QUESTION, retriever
 from llm import ask
 
@@ -15,6 +17,7 @@ def hypothetical_answer(question):
 
 if __name__ == "__main__":
     hypothetical = hypothetical_answer(QUESTION)
+    Path("hypothetical.txt").write_text(hypothetical)  # log the input that ran
     print("hypothetical:", hypothetical)
     print()
     hyde_hits = retriever.search(hypothetical, k=5)
