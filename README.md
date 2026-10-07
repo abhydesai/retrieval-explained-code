@@ -4,6 +4,8 @@ Runnable code for the **Retrieval Explained** video series. Every video that sho
 code has its code here, in the exact form the video shows it: clone the repo, install the
 folder's requirements, `cd` into the video's folder, and run the commands the video runs.
 
+Watch the videos on Clyep: [Retrieval Explained](https://clyep.io/series/retrieval-explained/).
+
 | Folder | Video |
 |---|---|
 | [`01-embeddings/`](./01-embeddings/) | 01, embeddings and vector search: embed a question, cosine similarity, exact and approximate search |
